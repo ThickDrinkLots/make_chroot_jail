@@ -51,7 +51,8 @@ RELEASE="2019-01-31"
 #####################################################################
 
 # Modified by ThickDrinkLots
-# - added Debian APPS: find grep
+# - added Debian APPS: find grep vim
+# - removed: rm, rmdir, mv, mkdir, cp
 #####################################################################
 
 
