@@ -6,6 +6,7 @@ sforkowane z https://github.com/pmenhart/make_chroot_jail
 - do aplikacji dla Debiana dodałem **find** i **grep**
 
 ### o czym warto wiedzieć
+- rozwiązanie niestety pozwala na wykonanie exploita polegającego na tym, że inny user dostanie uprawnienia root'a. Żeby do tego doszło user A poza chrootem musi znać hasło usera B, który ma dostęp do chroot'a.   
 - skrypt trzeba uruchamiać jako root
 - skrypt w docelowej lokalizacji - w naszym przypadku folder z katalogami logów innych serwerów i urządzeń - utworzy katalogi z plikami niezbędnymi do działania chroot'a (m.in. bin, home, lib).
 
