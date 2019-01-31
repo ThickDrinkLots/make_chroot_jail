@@ -15,7 +15,7 @@
 #####################################################################
 
 # first Release: 2004-07-30
-RELEASE="2008-04-26"
+RELEASE="2019-01-31"
 #
 # The latest version of the script is available at
 #   http://www.fuschlberger.net/programs/ssh-scp-sftp-chroot-jail/
@@ -49,6 +49,12 @@ RELEASE="2008-04-26"
 # Original: http://www.devcu.com/forums/topic/560-chrootjail-users-for-sshscp-ubuntu-1204/
 # Based on http://www.fuschlberger.net/programs/ssh-scp-sftp-chroot-jail/
 #####################################################################
+
+# Modified by ThickDrinkLots
+# - added Debian APPS: find grep
+#####################################################################
+
+
 
 # path to sshd's config file: needed for automatic detection of the locaten of
 # the sftp-server binary
@@ -129,7 +135,7 @@ elif [ "$DISTRO" = FEDORA ]; then
 elif [ "$DISTRO" = REDHAT ]; then
   APPS="/bin/bash /bin/cp /usr/bin/dircolors /bin/ls /bin/mkdir /bin/mv /bin/rm /bin/rmdir /bin/sh /bin/su /usr/bin/groups /usr/bin/id /usr/bin/nc /usr/bin/rsync /usr/bin/ssh /usr/bin/scp /sbin/unix_chkpwd"
 elif [ "$DISTRO" = DEBIAN ]; then
-  APPS="/bin/bash /bin/cp /usr/bin/dircolors /bin/ls /bin/mkdir /bin/mv /bin/rm /bin/rmdir /bin/sh /bin/su /usr/bin/groups /usr/bin/id /usr/bin/rsync /usr/bin/ssh /usr/bin/scp /sbin/unix_chkpwd /bin/cat /bin/more /usr/bin/less /usr/bin/nano"
+  APPS="/bin/bash /bin/cp /usr/bin/dircolors /bin/ls /bin/mkdir /bin/mv /bin/rm /bin/rmdir /bin/sh /bin/su /usr/bin/groups /usr/bin/id /usr/bin/rsync /usr/bin/ssh /usr/bin/scp /sbin/unix_chkpwd /bin/cat /bin/more /usr/bin/less /usr/bin/nano /usr/bin/find /bin/grep"
 else
   APPS="/bin/bash /bin/cp /usr/bin/dircolors /bin/ls /bin/mkdir /bin/mv /bin/rm /bin/rmdir /bin/sh /bin/su /usr/bin/groups /usr/bin/id /usr/bin/rsync /usr/bin/ssh /usr/bin/scp /usr/sbin/unix_chkpwd"
 fi
