@@ -1,21 +1,26 @@
 # make_chroot_jail
-Script to easily setup a chroot jail for ssh / scp / sftp with Linux
+sforkowane z https://github.com/pmenhart/make_chroot_jail
 
-The original commit contains unmodified copy of the script from  
-http://www.fuschlberger.net/programs/ssh-scp-sftp-chroot-jail/  
-You'll find nice explanation and usage instructions there.  
-More specific examples are on the net, search for "make_chroot_jail".
+moje modyfikacje:
+- usunąłęm linie związane z Ubuntu - powodowały błędy podczas uruchomienia skryptu
+- do aplikacji dla Debiana dodałem **find** i **grep**
 
-Second commit has changes needed for Ubuntu 12.04, and was originally published at
-http://www.devcu.com/forums/topic/560-chrootjail-users-for-sshscp-ubuntu-1204/
+## o czym warto wiedzieć
+- skrypt trzeba uruchamiać jako root
+- skrypt w docelowej lokalizacji - w naszym przypadku folder z katalogami logów innych serwerów i urządzeń - utworzy katalogi z plikami niezbędnymi do działania chroot'a (m.in. bin, home, lib).
 
-Finally, current version made the script non-interactive, better suitable for automated operation:
- * create user without a password
- * if the user exists and jailed then do nothing
- * if the user exists then jail her
- * do not create shell if already exists
-
-Additional changes:
- * tested on Ubuntu 8.04 to 14.04
- * added APPS: cat more less nano
- * copied /lib/terminfo
+## instrukcja
+- uruchamiać z konta root'a
+- po skopiowaniu nadać uprawnienia do uruchomienia:
+```bash
+# chmod u+x make_chroot_jail.sh
+```
+- jako parametry podać: nazwę użytkownika, ścieżkę w której skrypt na utworzyć plik powłoki dla jail'a, ścieżkę do jaila (do niej będzie się automatycznie logował user)
+- po zakończeniu działania skryptu należy ustawić hasło dla użytkownika:
+```bash
+# passwd nazwa_usera
+```
+- zrestartować sshd:
+```bash
+# /etc/init.d/ssh restart
+```
