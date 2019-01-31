@@ -109,8 +109,6 @@ if [ -f /etc/debian_version ];
   then echo -n "  Supported Distribution found:"
        echo "  System is running Debian Linux"
        DISTRO=DEBIAN;
-       ### Check Ubuntu version (e.g. hardy, precise)
-       UBUNTU_CODENAME=`lsb_release -c | cut -f 2`
 elif [ -f /etc/SuSE-release ];
   then echo "  Supported Distribution found"
        echo "  System is running SuSE Linux"
@@ -488,8 +486,6 @@ cp /etc/pam.d/* ${JAILPATH}/etc/pam.d/
 # ...and of course the PAM-modules...
 echo "Copying PAM-Modules to jail"
 cp -r /lib/x86_64-linux-gnu/security ${JAILPATH}/lib/
-# this is needed for Ubuntu 8.04, but will not hurt on 12.04 neither
-cp -r /lib/security ${JAILPATH}/lib/
 
 # ...and something else useful for PAM
 cp -r /etc/security ${JAILPATH}/etc/
