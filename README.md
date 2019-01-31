@@ -3,7 +3,8 @@ sforkowane z https://github.com/pmenhart/make_chroot_jail
 
 ### moje modyfikacje:
 - usunąłęm linie związane z Ubuntu - powodowały błędy podczas uruchomienia skryptu
-- do aplikacji dla Debiana dodałem **find** i **grep**
+- usunąłem zbędne aplikacje: **rm**, **rmdir**, **cp**, **mkdir**, **mv**, **nano**
+- do aplikacji dla Debiana dodałem **find**, **grep**, **vim**
 
 ### o czym warto wiedzieć
 - rozwiązanie niestety pozwala na wykonanie exploita polegającego na tym, że inny user dostanie uprawnienia root'a. Żeby do tego doszło user A poza chrootem musi znać hasło usera B, który ma dostęp do chroot'a.   
